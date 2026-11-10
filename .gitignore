@@ -1,0 +1,21 @@
+# Python Job Listings Scraper - gitignore
+# Environment and runtime artifacts
+.python-version
+.venv/
+__pycache__/
+.zed/
+
+# Output and data files
+jobs.csv
+
+# Poetry / uv lock files (if switching package managers)
+# uv.lock
+
+# IDE / editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python environment
+.env

@@ -1,0 +1,26 @@
+[
+  {
+    "file": "scraper.py",
+    "line": 34,
+    "summary": "Title extraction uses h2.title selector, misses div.title elements",
+    "failure_scenario": "Jobs with <div class=\"title\"> instead of <h2 class=\"title\"> have Title set to \"N/A\" despite having valid title text, affecting jobs 2 and 3 in the fixture"
+  },
+  {
+    "file": "scraper.py",
+    "line": 35,
+    "summary": "Company extraction uses h3.company selector, misses div.company elements",
+    "failure_scenario": "Jobs with <div class=\"company\"> instead of <h3 class=\"company\"> have Company set to \"N/A\" despite having valid company text, affecting jobs 2 and 3 in the fixture"
+  },
+  {
+    "file": "scraper.py",
+    "line": 36,
+    "summary": "Location extraction uses p.location selector, misses div.location elements",
+    "failure_scenario": "Job 2 has <div class=\"location\">New York, NY</div> but Location becomes \"N/A\" because the code only searches for <p class=\"location\">, losing valid location data"
+  },
+  {
+    "file": "scraper.py",
+    "line": 37,
+    "summary": "URL extraction uses a.apply-now-button class, but all anchor tags lack this class",
+    "failure_scenario": "All jobs have URL set to \"N/A\" because element.find(\"a\", class_=\"apply-now-button\") returns None; the test expects first job URL to be \"https://example.com/apply/1\" but gets \"N/A\""
+  }
+]
